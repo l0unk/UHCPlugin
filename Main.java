@@ -31,7 +31,7 @@ public final class Main extends JavaPlugin {
     public void setupConfig() {
         Settings.setup();
         Settings.load().options().copyDefaults(true);
-        Settings.load().addDefault("plugin.prefix", ChatColor.RED.asBungee() + "[!]");
+        Settings.load().addDefault("plugin.prefix","&e[!]");
         Settings.save();
     }
 
