@@ -1,7 +1,9 @@
 package me.lounk.uhc;
 
 import me.lounk.uhc.utilities.CommandManager;
+import me.lounk.uhc.utilities.Message;
 import me.lounk.uhc.utilities.Settings;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,7 +34,9 @@ public final class Main extends JavaPlugin {
         Settings.setup();
         Settings.load().options().copyDefaults(true);
         Settings.load().addDefault("plugin.prefix","&e[!]");
+        Settings.load().addDefault("uhc.worldname", Bukkit.getWorld("world").getName());
         Settings.save();
+        Message.getPrefix();
     }
 
     public void setupCommands() {

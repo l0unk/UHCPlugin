@@ -7,7 +7,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 public class Message {
-    static String prefix = ChatColor.getByChar(Settings.load().getString("plugin.prefix").substring(1,2)) + Settings.load().getString("plugin.prefix").substring(2) + " ";
+    static String prefix = "";
     static ConsoleCommandSender c = Bukkit.getConsoleSender();
     static ChatColor fail = ChatColor.RED;
     static ChatColor success = ChatColor.GREEN;
@@ -16,7 +16,7 @@ public class Message {
 
     public static void getPrefix() {
         String test = Settings.load().getString("plugin.prefix");
-        prefix = ChatColor.translateAlternateColorCodes('&', test);
+        prefix = ChatColor.translateAlternateColorCodes('&', test) + " ";
     }
 
 
